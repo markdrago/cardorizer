@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Cardorizer</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/loader.js"></script>
+    </head>
+    <body>
+        <div class="row">
+            <div class="span6 offset5">
+                <div id="feedback" class="alert alert-success" style="display: none">
+                    <a class="close" data-dismiss="alert">&times;</a>
+                    Your card was created on Trello.
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="span6 offset5">
+                <div id="deauthorized" class="alert alert-info" style="display: none">
+                    <p>You are not yet allowing Cardorizer to read from
+                    &amp; write to Trello on your behalf.  Click the link
+                    below to authorize this application.</p>
+                    <a id="connectLink" class="btn primary">Authorize</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="span6 offset5">
+                <div id="authorized" class="alert alert-info" style="display: none">
+                    <p>You are currently allowing Cardorizer to read
+                    from &amp; write to Trello on your behalf.  Click the link
+                    below to deauthorize this application.</p>
+                    <a id="disconnectLink" class="btn danger">Deauthorize</a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
