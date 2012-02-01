@@ -1,0 +1,13 @@
+var board_id = '<%= params[:board_id] %>';
+var cardorizer_url = '<%= params[:cardorizer_url] %>';
+t=document.createElement('script');
+t.type='text/javascript';
+document.body.appendChild(t);
+t.src='http://<%=ENV['hostname']%>/javascripts/jquery-1.7.1.min.js';
+t.id='cardorizer-jquery-js';
+t=document.createElement('script');
+t.type='text/javascript';
+document.body.appendChild(t);
+t.src='http://<%=ENV['hostname']%>/bm-server/cardorizer';
+t.id='cardorizer-js';
+void(0);

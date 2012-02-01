@@ -1,0 +1,7 @@
+syntax: glob
+
+config/database.yml
+log/*
+*~
+*.orig
+*.sqlite3
