@@ -1,0 +1,13 @@
+var board_id = '${board_id}';
+var cardorizer_url = '${cardorizer_url}';
+t=document.createElement('script');
+t.type='text/javascript';
+document.body.appendChild(t);
+t.src=cardorizer_url+'/js/jquery.min.js';
+t.id='cardorizer-jquery-js';
+t=document.createElement('script');
+t.type='text/javascript';
+document.body.appendChild(t);
+t.src=cardorizer_url+'/js/cardorizer-remote.js';
+t.id='cardorizer-js';
+void(0);
