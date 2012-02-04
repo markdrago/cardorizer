@@ -4,6 +4,7 @@
         <link rel="stylesheet" href="css/bootstrap.min.css" />
         <script type="text/javascript" src="js/lib/jquery.min.js"></script>
         <script type="text/javascript" src="js/lib/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/cardorizer-creator.js"></script>
         <script type="text/javascript" src="js/loader.js"></script>
     </head>
     <body>
@@ -24,6 +25,23 @@
                     below to authorize this application.</p>
                     <a id="connectLink" class="btn primary">Authorize</a>
                 </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="span6 offset5">
+                <div>
+                    <label>Board ID:</label>
+                    <input type="text" id="board-id" value=""/>
+                </div>
+                <div>
+                    <label>Cardorizer URL:</label>
+                    <input type="text" id="cardorizer-url" value=""/>
+                </div>
+                <div>
+                    <input type="button" id="make-cardorizer" value="Make Cardorizer"/>
+                </div>
+                <div id="cardorizer-bookmarklet"></div>
             </div>
         </div>
 

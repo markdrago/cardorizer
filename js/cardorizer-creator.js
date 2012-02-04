@@ -1,7 +1,7 @@
 $(document).ready(function() {
   $('#make-cardorizer').click(function() {
     $.ajax({
-      url:'/data/bookmarklet.tmpl.txt',
+      url:'/bookmarklet/bookmarklet.tmpl.txt',
       datatype: 'text',
       success: function(result) {
         var board_id = $('#board-id').val();

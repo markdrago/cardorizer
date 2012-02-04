@@ -3,9 +3,9 @@ var cardorizer_url='${cardorizer_url}';
 
 var s=document.createElement('script');
 s.type='text/javascript';
-s.src=cardorizer_url + '/js/lib/require.js';
+s.src=cardorizer_url + '/bookmarklet/lib/require.js';
 s.id='cardorizer-require-js';
-s.setAttribute('data-main', cardorizer_url + '/js/cardorizer-remote.js');
+s.setAttribute('data-main', cardorizer_url + '/bookmarklet/cardorizer.js');
 document.body.appendChild(s);
 
 void(0);
