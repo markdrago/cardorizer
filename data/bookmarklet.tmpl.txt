@@ -1,0 +1,11 @@
+var board_id='${board_id}';
+var cardorizer_url='${cardorizer_url}';
+
+var s=document.createElement('script');
+s.type='text/javascript';
+s.src=cardorizer_url + '/js/require.js';
+s.id='cardorizer-require-js';
+s.setAttribute('data-main', cardorizer_url + '/js/cardorizer-remote.js');
+document.body.appendChild(s);
+
+void(0);
