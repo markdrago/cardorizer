@@ -1,7 +1,16 @@
 $(document).ready(function() {
+
+  var scheme = location.protocol + "//";
+  var host = location.hostname;
+  var port = location.port;
+  if (port != "") { port = ":" + port; }
+  var path = location.pathname;
+  var cardorizer_url = scheme + host + port + path;
+  $("#cardorizer-url").val(cardorizer_url);
+
   $('#make-cardorizer').click(function() {
     $.ajax({
-      url:'/bookmarklet/bookmarklet.tmpl.txt',
+      url:'bookmarklet/bookmarklet.tmpl.txt',
       datatype: 'text',
       success: function(result) {
         var board_id = $('#board-id').val();
