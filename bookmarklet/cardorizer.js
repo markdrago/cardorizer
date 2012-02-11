@@ -64,5 +64,18 @@ var sources = [
             var summary = $("#issue_header_summary").children().first().text();
             return { name: key + ": " + summary, description: location.href };
         }
+    },
+
+    //github issues
+    {
+        identify: function() {
+            return ($("#show_issue").length > 0);
+        },
+
+        parse: function() {
+            var card_name = $("#show_issue .number strong").text() + " " +
+                $("#show_issue .content-title").text();
+            return { name: card_name, description: location.href };
+        }
     }
 ];
