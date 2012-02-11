@@ -77,5 +77,18 @@ var sources = [
                 $("#show_issue .content-title").text();
             return { name: card_name, description: location.href };
         }
+    },
+
+    //fogbugz
+    {
+        identify: function() {
+            return (!!window.goBug);
+        },
+
+        parse: function() {
+            var bug = window.goBug;
+            var card_name = bug.ixBug + ": " + bug.sTitle;
+            return { name: card_name, description: location.href };
+        }
     }
 ];
