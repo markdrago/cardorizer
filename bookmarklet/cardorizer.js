@@ -1,15 +1,29 @@
-require([cardorizer_url + '/bookmarklet/lib/jquery.min.js'], jira);
+require([cardorizer_url + '/bookmarklet/lib/jquery.min.js'], send_to_trello);
 
-function jira() {
-    var key=document.getElementById("key-val").text;
-    var summary=document.getElementById("issue_header_summary").children[0].text;
-    var link=location.href;
-    var card_name=key+": "+summary;
-    var description=link;
-    //location=cardorizer_url+"?boardid="+board_id+"&name="+card_name+"&description="+description
+//board_id and cardorizer_url are defined directly in the bookmarklet
+
+function send_to_trello() {
+    var card_details = null;
+    for (var i in sources) {
+        var source = sources[i];
+        if (source.identify()) {
+            card_details = source.parse();
+            break;
+        }
+    }
+
+    if (card_details == null) {
+        return;
+    }
+
+    var parameters = {
+        boardid: board_id,
+        name: card_details['name'],
+        description: card_details['description']
+    };
 
     var $iframe = $("<iframe>")
-        .attr("src", cardorizer_url + "?" + $.param({ boardid: board_id, name: card_name, description: description}))
+        .attr("src", cardorizer_url + "?" + $.param(parameters))
         .hide()
         .appendTo("body")
         .load(function(){
@@ -29,3 +43,26 @@ function jira() {
             .fadeOut(2000, function() { $iframe.remove() } );
         });
 }
+
+/* sources:
+ *   identify: returns true/false if the current page is one of the
+ *             pages that this source will be able to parse
+ *      parse: returns an object with the following contents
+ *              - name: the name/title of the card
+ *              - description: the description of the card
+ */
+
+var sources = [
+    //JIRA
+    {
+        identify: function() {
+            return true;
+        },
+
+        parse: function() {
+            var key = document.getElementById("key-val").text;
+            var summary = document.getElementById("issue_header_summary").children[0].text;
+            return { name: key + ": " + summary, description: location.href };
+        }
+    }
+];
