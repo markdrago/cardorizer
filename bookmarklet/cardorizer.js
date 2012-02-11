@@ -56,12 +56,12 @@ var sources = [
     //JIRA
     {
         identify: function() {
-            return true;
+            return ($("#key-val").length > 0);
         },
 
         parse: function() {
-            var key = document.getElementById("key-val").text;
-            var summary = document.getElementById("issue_header_summary").children[0].text;
+            var key = $("#key-val").text();
+            var summary = $("#issue_header_summary").children().first().text();
             return { name: key + ": " + summary, description: location.href };
         }
     }
