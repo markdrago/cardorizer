@@ -7,6 +7,7 @@ For example, at my company we use JIRA to hold user stories, bugs, etc.  I would
 * JIRA
 * Github Issues
 * FogBugz
+* Trello (copy card from one board to another)
 * _Contributions of support for new services are very welcome!_
 
 ## Setup

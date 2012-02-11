@@ -90,5 +90,18 @@ var sources = [
             var card_name = bug.ixBug + ": " + bug.sTitle;
             return { name: card_name, description: location.href };
         }
+    },
+
+    //trello card
+    {
+        identify: function() {
+            //make sure the details of a card are being shown
+            return (location.pathname.substring(0, 6) == "/card/");
+        },
+
+        parse: function() {
+            var card_name = $('.card-detail-title .window-title-text').text();
+            return { name: card_name, description: location.href };
+        }
     }
 ];
