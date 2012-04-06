@@ -103,5 +103,17 @@ var sources = [
             var card_name = $('.card-detail-title .window-title-text').text();
             return { name: card_name, description: location.href };
         }
+    },
+
+    //trac
+    {
+        identify: function() {
+            return ($("#trac-ticket-title").length > 0);
+        },
+
+        parse: function() {
+            var card_name = $("title").text();
+            return { name: card_name, description: location.href };
+        }
     }
 ];
